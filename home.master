@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="home.master.cs" Inherits="home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder> </title>
+<!--css-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/font-awesome.css" rel="stylesheet"/>
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Toy Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="js/main.js"></script>
+<!--search jQuery-->
+<script src="js/responsiveslides.min.js"></script>
+ <script>
+     $(function () {
+         $("#slider").responsiveSlides({
+             auto: true,
+             nav: true,
+             speed: 500,
+             namespace: "callbacks",
+             pager: true,
+         });
+     });
+ </script>
+ <!--mycart-->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+ <!-- cart -->
+<script src="js/simpleCart.min.js"></script>
+<!-- cart -->
+  <!--start-rate-->
+<script src="js/jstarbox.js"></script>
+	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript">
+		    jQuery(function () {
+		        jQuery('.starbox').each(function () {
+		            var starbox = jQuery(this);
+		            starbox.starbox({
+		                average: starbox.attr('data-start-value'),
+		                changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+		                ghosting: starbox.hasClass('ghosting'),
+		                autoUpdateAverage: starbox.hasClass('autoupdate'),
+		                buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+		                stars: starbox.attr('data-star-count') || 5
+		            }).bind('starbox-value-changed', function (event, value) {
+		                if (starbox.hasClass('random')) {
+		                    var val = Math.random();
+		                    starbox.next().text(' ' + val);
+		                    return val;
+		                }
+		            })
+		        });
+		    });
+		</script>
+<!--//End-rate-->
+</head>
+<body>
+	<!--header-->
+		<div class="header">
+			<div class="header-top">
+				<div class="container">
+					 <div class="top-left">
+						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
+					</div>
+					<div class="top-right">
+					<ul>
+                        <li><asp:HyperLink ID="HyperLink1" runat="server">Checkout</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink2" runat="server">Login</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink3" runat="server">Create Account</asp:HyperLink></li>
+					</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="heder-bottom">
+				<div class="container">
+					<div class="logo-nav">
+                        <div class="logo-nav-left">
+							<h1><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/index.aspx">Toy Store<span>toys anywhere</span></asp:HyperLink></h1>
+						</div>
+						<div class="logo-nav-left1">
+							<nav class="navbar navbar-default">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header nav_2">
+								<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div> 
+							<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+								<ul class="nav navbar-nav">
+									<li class="active">
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink></li>	
+									<!-- Mega Menu -->
+									<li class="dropdown">
+										<asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Category</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Age</asp:HyperLink></li>																</li>
+								</ul>
+							</div>
+							</nav>
+						</div>
+						<div class="header-right2">
+							<div class="cart box_1">
+									<asp:HyperLink runat="server">HyperLink</asp:HyperLink>
+								<a href="checkout.aspx">
+									<h3> <div class="total">
+										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+										<img src="images/bag.png" alt="" />
+									</h3>
+								</a>
+								<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+								<div class="clearfix"> </div>
+							</div>	
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--header-->
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    		<div class="footer-w3l">
+						<div class="container">
+							<div class="footer-grids">
+								<div class="col-md-3 footer-grid">
+									<h4>About </h4>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+									<div class="social-icon">
+										<a href="#"><i class="icon"></i></a>
+										<a href="#"><i class="icon1"></i></a>
+										<a href="#"><i class="icon2"></i></a>
+										<a href="#"><i class="icon3"></i></a>
+									</div>
+								</div>
+								<div class="col-md-3 footer-grid">
+									<h4>My Account</h4>
+									<ul>
+										<li><a href="checkout.aspx">Checkout</a></li>
+										<li><a href="login.aspx">Login</a></li>
+										<li><a href="registered.aspx"> Create Account </a></li>
+									</ul>
+								</div>
+								<div class="col-md-3 footer-grid">
+									<h4>Information</h4>
+									<ul>
+										<li><a href="index.aspx">Home</a></li>
+										<li><a href="products.aspx">Products</a></li>
+										<li><a href="codes.aspx">Short Codes</a></li>
+										<li><a href="mail.aspx">Mail Us</a></li>
+										<li><a href="products1.aspx">products1</a></li>
+									</ul>
+								</div>
+								<div class="col-md-3 footer-grid foot">
+									<h4>Contacts</h4>
+									<ul>
+										<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">E Comertown Rd, Westby, USA</a></li>
+										<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">1 599-033-5036</a></li>
+										<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com"> example@mail.com</a></li>
+										
+									</ul>
+								</div>
+							<div class="clearfix"> </div>
+							</div>
+							
+						</div>
+					</div>
+				
+        <div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2016 Toy Store . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+							
+
+</body>
+</html>
