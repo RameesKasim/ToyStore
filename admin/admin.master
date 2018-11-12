@@ -1,50 +1,64 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="home.master.cs" Inherits="home" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_admin" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<title>
+    <title>
     <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder> </title>
+    </asp:ContentPlaceHolder>
+    </title>
 <!--css-->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.css" rel="stylesheet">
+<link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/font-awesome.css" rel="stylesheet"/>
 <!--css-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="Toy Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'/>
 <!--search jQuery-->
-	<script src="js/main.js"></script>
+	<script src="~/js/main.js"></script>
 <!--search jQuery-->
-
+<script src="~/js/responsiveslides.min.js"></script>
+ <script>
+     $(function () {
+         $("#slider").responsiveSlides({
+             auto: true,
+             nav: true,
+             speed: 500,
+             namespace: "callbacks",
+             pager: true,
+         });
+     });
+ </script>
  <!--mycart-->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="~/js/bootstrap-3.1.1.min.js"></script>
  <!-- cart -->
-<script src="js/simpleCart.min.js"></script>
+<script src="~/js/simpleCart.min.js"></script>
 <!-- cart -->
-</head>
+  <!--start-rate-->
+<script src="~/js/jstarbox.js"></script>
+	<link rel="stylesheet" href="~/css/jstarbox.css" type="text/css" media="screen"  />
+		</head>
 <body>
 	<!--header-->
 		<div class="header">
 			<div class="header-top">
 				<div class="container">
 					 <div class="top-left">
-						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +914902356565</a>
+						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +0123-456-789</a>
 					</div>
 					<div class="top-right">
-					<ul>
-                        <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/user_reg.aspx">Create User Account</asp:HyperLink></li>                        
-                        <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/login.aspx">Login</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/dealer_reg.aspx">Create Dealer Account</asp:HyperLink></li>
+                        
+					    <ul>
+                      <li> <asp:HyperLink ID="logout"  style="background-color: transparent;border:none;color:white;" >logout</asp:HyperLink></li> 
 					</ul>
-					</div>
+                	</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -68,26 +82,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 								<ul class="nav navbar-nav">
 									<li>
-                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink></li>	
-									<li>
-										<asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Category</asp:HyperLink></li>
-									<li><asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Age</asp:HyperLink></li>																
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="home.aspx">Registered Users</asp:HyperLink></li>	
+									<!-- Mega Menu -->
+									<li><asp:HyperLink runat="server" NavigateUrl="dlist.aspx">Registered Delears</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="plist.aspx">Product Details</asp:HyperLink></li>
+                                    																
 								</ul>
 							</div>
 							</nav>
 						</div>
 						<div class="header-right2">
-						
+						 <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/home.aspx">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/user_images/root.jpg" Height="30" Width="40" style="border-radius:25px"/></asp:HyperLink></li>	
+							</div>	
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<!--header-->
-    	<div class="bg-image bg-parallax overlay" style="background-image:url(images/b3.jpg)">
-    <form id="form1" runat="server">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    <div>
+        <form id="form1" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
         
         </asp:ContentPlaceHolder>
     </form>
@@ -97,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="footer-grids">
 								<div class="col-md-3 footer-grid">
 									<h4>About </h4>
-									<p>Toy Store is an Online portal for our kids to esliy pick upa their desired toys .</p>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 									<div class="social-icon">
 										<a href="#"><i class="icon"></i></a>
 										<a href="#"><i class="icon1"></i></a>
@@ -108,18 +124,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-3 footer-grid">
 									<h4>My Account</h4>
 									<ul>
-										<li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/login.aspx">Login</asp:HyperLink></li>
-										<li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/dealer_reg.aspx">Dealer Registration</asp:HyperLink></li>
-										<li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/user_reg.aspx">User Registration</asp:HyperLink></li>
-									</ul>
+										</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
 									<h4>Information</h4>
 									<ul>
-										<li><asp:HyperLink runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink></li>
-										<li><asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Category</asp:HyperLink></li>										
-										<li><asp:HyperLink runat="server" NavigateUrl="~/login.aspx">Shop By Age</asp:HyperLink></li>                                
-                                        	</ul>
+									<li> <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="home.aspx">Home</asp:HyperLink></li>	
+									<li><asp:HyperLink runat="server" NavigateUrl="home.aspx">Registered Users</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="dlist.aspx">Registered Delears</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="plist.aspx">Product Details</asp:HyperLink></li>
+                                    
+									</ul>
 								</div>
 								<div class="col-md-3 footer-grid foot">
 									<h4>Contacts</h4>
@@ -147,8 +162,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"></div>
 						</div>
 					</div>
-				<!--copy-->
-							
-
-</body>
+				<!--copy--></body>
 </html>

@@ -10,9 +10,7 @@
                             <div class="text-left">
                                 User Registration</div></h3>
                             <table class="nav-justified" border="0" >
-                                <tbody class="text-left">
-                            <tr><div class="key">
-                                <td style="width:100px">&nbsp;</td>
+                                <tr> <td style="width:100px">&nbsp;</td>
 								<td style="width: 258px">&nbsp;</td>
                                 <td class="text-left">
                                     <asp:Image ID="Image1" runat="server" Height="80px" Width="80px" />
@@ -55,14 +53,13 @@
                                 
                             </tr>
                          <tr>
-                        <td colspan="3" align="center"><asp:Button ID="submit" runat="server" Text="REGISTER"  Width="100px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button width="100px" ID="reset" runat="server" Text="RESET" />
+                        <td colspan="3" align="center"><asp:Button ID="submit" runat="server" Text="REGISTER"  Width="100px" OnClick="submit_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button width="100px" ID="reset" runat="server" Text="RESET" />
 
                              </td>
                             </table>
-                        </h3>
+                       
                          					</div>
 				</div>
-			</div>
 			</div>
 </asp:Content>
 

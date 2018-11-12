@@ -3,14 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-  <div class="login">
+    <div class="login">
 				<div class="main-agileits" style="width:50%">
 					<div class="form-w3agile">
 						<h3>
                             <div class="text-left">
                                 Dealer Registration</div></h3>
                             <table class="nav-justified" border="0" >
-                                <tbody class="text-left">
+                                <tr body class="text-left"> </tr>
                             <tr><div class="key">
                                 <td style="width:100px">&nbsp;</td>
 								<td style="width: 258px">&nbsp;</td>
@@ -54,14 +54,14 @@
                                 
                             </tr>
                          <tr>
-                        <td colspan="3" align="center"><asp:Button ID="submit" runat="server" Text="REGISTER"  Width="100px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button width="100px" ID="reset" runat="server" Text="RESET" />
+                        <td colspan="3" align="center"><asp:Button ID="submit" runat="server" Text="REGISTER"  Width="100px" OnClick="submit_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button width="100px" ID="reset" runat="server" Text="RESET" />
 
                              </td>
                             </table>
-                        </h3>
+                        
                          					</div>
 				</div>
 			</div>
-			</div>
+			
 </asp:Content>
 
