@@ -129,6 +129,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+    height: 29px;
 }
 button[disabled],
 html input[disabled] {
@@ -183,6 +184,7 @@ table {
 td,
 th {
   padding: 0;
+    text-align: center;
 }
 @media print {
   * {
@@ -307,6 +309,7 @@ figure {
 }
 img {
   vertical-align: middle;
+    text-align: right;
 }
 .img-responsive,
 .thumbnail > img,

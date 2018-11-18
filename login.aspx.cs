@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-
+//using System.Web.HttpContext;
 public partial class login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -28,25 +28,19 @@ public partial class login : System.Web.UI.Page
         dtadt.Fill(dt);
         if (dt.Rows.Count > 0)
         {
+            Session["uname"] = usename.Text;
+            Session["type"] = DropDownList1.SelectedValue;
             if(DropDownList1.SelectedValue=="admin")
-            {
                 Response.Redirect("admin/home.aspx");
-                Session["uname"]="admin";
-            }
+                
            else if(DropDownList1.SelectedValue=="user") 
-            {
                 Response.Redirect("user/home.aspx");
-                Session["uname"]=usename.Text;
-           }
             else
-            {
-                Response.Redirect("dealer/home.aspx");
-                Session["uname"]=usename.Text;
-           }
+                Response.Redirect("dealer/products.aspx");
 
         }
         else
             Response.Write("<script>alert('username or password incorrect')</script>");
-        usename.Text = "";
+            usename.Text = "";
     }
 }

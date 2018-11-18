@@ -45,6 +45,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" href="~/css/jstarbox.css" type="text/css" media="screen"  />
 		</head>
 <body>
+ <form id="form1" runat="server">
+   
 	<!--header-->
 		<div class="header">
 			<div class="header-top">
@@ -55,7 +57,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-right">
                         
 					    <ul>
-                      <li> <asp:HyperLink ID="logout"  style="background-color: transparent;border:none;color:white;" >logout</asp:HyperLink></li> 
+                      <li> <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" style="background-color:transparent;"/></li> 
+					</li> 
 					</ul>
                 	</div>
 					<div class="clearfix"></div>
@@ -81,16 +84,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="collapse navbar-collapse" ">
 								<ul class="nav navbar-nav">
 									<li>
-                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="home.aspx">Products List</asp:HyperLink></li>	
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="products.aspx">Products List</asp:HyperLink></li>	
 									<!-- Mega Menu -->
-									<li><asp:HyperLink runat="server" NavigateUrl="dlist.aspx">Order List</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="orders.aspx">Order List</asp:HyperLink></li>
+									<li><asp:HyperLink runat="server" NavigateUrl="updateprdct.aspx">Update Product</asp:HyperLink></li>
 																									
 								</ul>
 							</div>
 							</nav>
 						</div>
 						<div class="header-right2">
-						 <li><asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder></li>	
+						 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="dealerinfo.aspx">
+                        <asp:Image ID="Image1" runat="server"  Height="50" Width="60" style="border-radius:25px"/></asp:HyperLink>	
 							</div>	
 						</div>
 						<div class="clearfix"> </div>
@@ -99,13 +104,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		<!--header-->
     <div>
-    <form id="form1" runat="server">
-    <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    </form>
         	<div class="footer-w3l">
 						<div class="container">
 							<div class="footer-grids">
@@ -162,6 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				<!--copy-->
-		
+ </form>
+   		
 </body>
 </html>

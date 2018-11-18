@@ -56,8 +56,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-right">
                         
 					    <ul>
-                      <li> <asp:HyperLink ID="logout"  style="background-color: transparent;border:none;color:white;" >logout</asp:HyperLink></li> 
-					</ul>
+                       <form id="form1" runat="server"> 
+                      <li> <asp:Button ID="Button2" runat="server" Text="Logout" style="background-color:transparent;" OnClick="Button2_Click"/></li> 
+					
+                           </ul>
                 	</div>
 					<div class="clearfix"></div>
 				</div>
@@ -66,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="logo-nav">
                         <div class="logo-nav-left">
-							<h1><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/index.aspx">Toy Store<span>toys anywhere</span></asp:HyperLink></h1>
+							<h1><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl=" ">Toy Store<span>toys anywhere</span></asp:HyperLink></h1>
 						</div>
 						<div class="logo-nav-left1">
 							<nav class="navbar navbar-default">
@@ -92,8 +94,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</nav>
 						</div>
 						<div class="header-right2">
-						 <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/home.aspx">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/user_images/root.jpg" Height="30" Width="40" style="border-radius:25px"/></asp:HyperLink></li>	
+						 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/home.aspx">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/user_images/root.jpg" Height="30" Width="40" style="border-radius:25px"/></asp:HyperLink>	
 							</div>	
 						</div>
 						<div class="clearfix"> </div>
@@ -102,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		<!--header-->
     <div>
-        <form id="form1" runat="server">
+        
         <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
         
         </asp:ContentPlaceHolder>

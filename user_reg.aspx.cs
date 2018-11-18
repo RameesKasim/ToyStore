@@ -44,10 +44,12 @@ public partial class usser_reh : System.Web.UI.Page
             cmd1.Parameters.Add("@username", uname.Text);
             cmd1.Parameters.Add("@password ", paswd.Text);
             cmd1.Parameters.Add("@type", "user");
-           // cmd1.Parameters.Add("@image", "~/images/user_images/" + image.FileName); 
+            cmd1.Parameters.Add("@image", "~/images/user_images/" + image.FileName); 
             cmd1.ExecuteNonQuery();
-            //Response.Write("<script>User Registered</script>");
-            //Response.Redirect("Login.aspx");
+            String filename = Path.Combine(Server.MapPath("~/images/user_images/"), image.FileName);
+            image.SaveAs(filename);  
+            Response.Write("<script>User Registered</script>");
+            Response.Redirect("Login.aspx");
         }
     }
 }

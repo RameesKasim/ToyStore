@@ -42,10 +42,12 @@ public partial class dealer_reg : System.Web.UI.Page
             cmd1.Parameters.Add("@phoneno", phne.Text);
             cmd1.Parameters.Add("@password ", paswd.Text);
             cmd1.Parameters.Add("@type", "dealer");
-            // cmd1.Parameters.Add("@image", "~/images/user_images" + image.FileName); 
+            cmd1.Parameters.Add("@image", "~/images/dealers/" + image.FileName); 
             cmd1.ExecuteNonQuery();
-            //Response.Write("<script>User Registered</script>");
-            //Response.Redirect("Login.aspx");
+            String filename = Path.Combine(Server.MapPath("~/images/dealers/"), image.FileName);
+            image.SaveAs(filename);  
+            Response.Write("<script>Dealer Registered</script>");
+            Response.Redirect("Login.aspx");
         }
     }
 }

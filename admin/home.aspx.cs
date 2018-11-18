@@ -10,14 +10,14 @@ using System.Drawing;
 using System.Windows.Markup;
 using System.Net;
 using System.Web.UI.HtmlControls;
+//using System.Web.HttpContext;
 
 public partial class admin_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       // if (Session["uname"] != "admin")
-         //   Response.Redirect("~/index.aspx");
-         int c = 0;
+
+        int c = 0;
         Panel1.Controls.Add(new LiteralControl("<table style=width:100%>"));
 
         Panel1.Controls.Add(new LiteralControl("<tr>"));
@@ -51,11 +51,11 @@ public partial class admin_Default : System.Web.UI.Page
                 img.Src = dt.Rows[i][6].ToString();
                 Panel1.Controls.Add(new LiteralControl("<td><table runat=server>"));
                 Panel1.Controls.Add(new LiteralControl("<tr><td>"));
-                //Panel1.Controls.Add(new LiteralControl("<a href=booknow.aspx?id=" + dt.Rows[i][6].ToString() + ">"));
+                Panel1.Controls.Add(new LiteralControl("<a href=userdetails.aspx?uname1=" + dt.Rows[i][3].ToString() + ">"));
                 Panel1.Controls.Add(img);
                 Panel1.Controls.Add(new LiteralControl("</a>"));
                 Panel1.Controls.Add(new LiteralControl("</td></tr>"));
-                Panel1.Controls.Add(new LiteralControl("<tr><td align='center'>" + dt.Rows[i][1].ToString()+" "+dt.Rows[i][2].ToString()));
+                Panel1.Controls.Add(new LiteralControl("<tr><td align='center'>"+ dt.Rows[i][1].ToString()+" "+dt.Rows[i][2].ToString()));
                 Panel1.Controls.Add(new LiteralControl("</td></tr>"));
                 Panel1.Controls.Add(new LiteralControl("</table>"));
                 Panel1.Controls.Add(new LiteralControl("</td>"));
@@ -70,5 +70,10 @@ public partial class admin_Default : System.Web.UI.Page
         Panel1.Controls.Add(new LiteralControl("</tr>"));
         Panel1.Controls.Add(new LiteralControl("</table>"));
     }
-    }
+    
+
+}  
+
+
+
     
